@@ -1,0 +1,5 @@
+package exercises.secao13.practice136.entities;
+
+public class WorkerLevel {
+
+}

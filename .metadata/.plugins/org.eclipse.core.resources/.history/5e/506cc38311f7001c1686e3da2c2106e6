@@ -1,0 +1,25 @@
+package exercises.secao13.practice136.entities;
+
+public class Department {
+	
+	String nome;
+	
+	public Department() {
+		
+	}
+
+	public Department(String nome) {
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
+	
+}
