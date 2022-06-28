@@ -1,6 +1,5 @@
 package exercises.secao13.practice139.entities;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +8,6 @@ public class Order {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-	private static DecimalFormat df = new DecimalFormat("0.00");
-	
 	private Date moment;
 
 	private OrderStatus status;
@@ -84,7 +81,7 @@ public class Order {
 		for(OrderItem item : items) {
 			sb.append("\n"+item);
 		}
-		sb.append("\nTotal price: $"+df.format(this.total()));
+		sb.append("\nTotal price: "+this.total());
 
 		return sb.toString();
 	}

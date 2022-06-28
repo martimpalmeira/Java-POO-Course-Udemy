@@ -1,10 +1,6 @@
 package exercises.secao13.practice139.entities;
 
-import java.text.DecimalFormat;
-
 public class OrderItem {
-	
-	private static DecimalFormat df = new DecimalFormat("0.00");
 
 	private Integer quantity;
 
@@ -53,8 +49,8 @@ public class OrderItem {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.product.getName() + ", $" + df.format(this.price) + ", Quantity: " + this.quantity + ", Subtotal: $"
-				+ df.format(this.subTotal()));
+		sb.append(this.product.getName() + ", $" + this.price + ", Quantity: " + this.quantity + ", Subtotal: "
+				+ this.subTotal());
 		return sb.toString();
 	}
 

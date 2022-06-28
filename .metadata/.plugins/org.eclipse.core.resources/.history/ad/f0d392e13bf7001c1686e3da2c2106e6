@@ -54,7 +54,7 @@ public class OrderItem {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.product.getName() + ", $" + df.format(this.price) + ", Quantity: " + this.quantity + ", Subtotal: $"
-				+ df.format(this.subTotal()));
+				+ this.subTotal());
 		return sb.toString();
 	}
 
