@@ -1,0 +1,39 @@
+package exercises.secao14.practice149.application;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		Locale.setDefault(Locale.US);
+
+		Scanner sc = new Scanner(System.in);
+
+		ArrayList<Product> products = new ArrayList<>();
+
+		System.out.print("Enter the number of products: ");
+		int numberOfProducts = sc.nextInt();
+
+		for (int i = 1; i <= numberOfProducts; i++) {
+			System.out.println("Product #" + i + " data:");
+			System.out.print("Common, used or imported (c/u/i)? ");
+			char type = sc.next().charAt(0);
+
+			System.out.print("Name: ");
+			String name = sc.nextLine();
+
+			System.out.print("Price: ");
+			Double price = sc.nextDouble();
+
+			if (type == 'c') {
+
+			}
+
+		}
+	}
+}
