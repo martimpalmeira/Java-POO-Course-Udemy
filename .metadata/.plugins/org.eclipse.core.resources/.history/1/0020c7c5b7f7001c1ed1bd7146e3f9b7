@@ -1,0 +1,6 @@
+package exercises.secao14.practice152.entities;
+
+public class IndividualTaxPayer extends TaxPayer {
+	
+	private Double healthExpenditures;
+}
