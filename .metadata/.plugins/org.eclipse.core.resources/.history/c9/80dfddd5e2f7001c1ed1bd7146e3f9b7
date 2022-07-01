@@ -1,0 +1,37 @@
+package exercises.secao15.practice160.application;
+
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+import exercises.secao15.practice160.entities.Reservation;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+//		System.out.print("Room number: ");
+//		Integer roomNumber = sc.nextInt();
+//		
+//		System.out.print("Check-in date (dd/MM/yyyy): ");
+//		String checkinDateStr = sc.nextLine();
+//		//Date checkinDate = sdf.parse(checkinDateStr);
+//		
+//		System.out.print("Check-out date (dd/MM/yyyy): ");
+//		String checkoutDateStr = sc.nextLine();
+//		//Date checkoutDate = sdf.parse(checkoutDateStr);
+//		
+//		
+//		System.out.println("Enter data to update the reservation: ");
+//		System.out.print("Check-in date (dd/MM/yyyy): ");
+//		
+//		System.out.print("Check-out date (dd/MM/yyyy): ");
+		
+		Reservation r = new Reservation();
+		
+		r.setCheckin(sdf.parse("05/02/2022"));
+	}
+}
