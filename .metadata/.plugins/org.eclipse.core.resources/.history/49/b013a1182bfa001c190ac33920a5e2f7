@@ -4,8 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import exercises.secao15.practice160.exception.DateException;
-
 public class Reservation {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -18,13 +16,13 @@ public class Reservation {
 
 	
 
-	public Reservation(int roomNumber, Date checkin, Date checkout) throws DateException {
+	public Reservation(int roomNumber, Date checkin, Date checkout) {
 		if(checkout.after(checkin)) {
 			this.roomNumber = roomNumber;
 			this.checkin = checkin;
 			this.checkout = checkout;
 		}else {
-			throw new DateException("Check-oute date must be after check-in date");
+			throw new IllegalArgumentException("Data de checkout depois filhão");
 		}
 		
 	}
@@ -53,16 +51,12 @@ public class Reservation {
 		return durationDays;
 	}
 
-	public void updateDates(Date checkin, Date checkout) throws DateException {
-		Date now = new Date();
-		if(checkin.after(now) || checkout.after(now)) {
-			throw new DateException("Reservation dates for update must be future dates");
-		}
+	public void updateDates(Date checkin, Date checkout) {
 		if(checkout.after(checkin)) {
 			this.checkin = checkin;
 			this.checkout = checkout;
 		}else {
-			throw new DateException("Check-oute date must be after check-in date");
+			throw new IllegalArgumentException("Check-oute date must be after check-in date");
 		}
 		
 	}

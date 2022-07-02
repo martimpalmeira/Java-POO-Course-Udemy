@@ -24,7 +24,7 @@ public class Reservation {
 			this.checkin = checkin;
 			this.checkout = checkout;
 		}else {
-			throw new DateException("Check-oute date must be after check-in date");
+			throw new DateException("Data de checkout depois filhão");
 		}
 		
 	}
@@ -56,7 +56,7 @@ public class Reservation {
 	public void updateDates(Date checkin, Date checkout) throws DateException {
 		Date now = new Date();
 		if(checkin.after(now) || checkout.after(now)) {
-			throw new DateException("Reservation dates for update must be future dates");
+			throw new DateException("Must uptade to future dates");
 		}
 		if(checkout.after(checkin)) {
 			this.checkin = checkin;

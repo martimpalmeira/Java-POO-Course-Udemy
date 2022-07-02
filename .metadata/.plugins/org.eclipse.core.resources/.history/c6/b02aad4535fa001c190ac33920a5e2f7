@@ -10,13 +10,12 @@ import exercises.secao15.practice160.exception.DateException;
 
 public class Program {
 
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	public static void main(String[] args) throws ParseException {
 
 		try {
+			Scanner sc = new Scanner(System.in);
+
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 			System.out.print("Room number: ");
 			Integer roomNumber = sc.nextInt();
@@ -49,12 +48,6 @@ public class Program {
 			System.out.print(r);
 		} catch (DateException e) {
 			System.out.println(e.getMessage());
-		} catch (ParseException e) {
-			System.out.println("Invalid date format");
-		} catch (RuntimeException e) {
-			System.out.println("Unexpected error");
-		} finally {
-			sc.close();
 		}
 
 	}

@@ -14,9 +14,9 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
 		try {
+
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 			System.out.print("Room number: ");
 			Integer roomNumber = sc.nextInt();
@@ -49,10 +49,6 @@ public class Program {
 			System.out.print(r);
 		} catch (DateException e) {
 			System.out.println(e.getMessage());
-		} catch (ParseException e) {
-			System.out.println("Invalid date format");
-		} catch (RuntimeException e) {
-			System.out.println("Unexpected error");
 		} finally {
 			sc.close();
 		}
