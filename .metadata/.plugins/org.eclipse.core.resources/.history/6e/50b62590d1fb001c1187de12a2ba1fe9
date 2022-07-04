@@ -1,0 +1,28 @@
+package exercises.secao17.practice211;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Program {
+
+	public static void main(String[] args) {
+		String path = "/Users/junior/desktop/Arquivos Java/source.csv";
+		
+//		File pathStr = new File(path);
+//		
+//		File summary = new File(pathStr+"/out");
+		
+		try(BufferedReader br = new BufferedReader(new FileReader(path))){
+			String line = br.readLine();
+			while(line != null) {
+				System.out.println(line);
+				
+			}
+
+			
+		}catch(IOException e) {
+			System.out.println("Error: "+ e.getMessage());
+		}
+	}
+}

@@ -1,0 +1,27 @@
+package exercises.secao17.practice206;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		String path = "/Users/junior/Desktop/file.txt";
+
+		FileReader fr = null;
+
+		BufferedReader br = null;
+
+		try {
+			fr = new FileReader(path);
+			br = new BufferedReader(fr);
+			
+			String line = br.readLine();
+			
+		} catch (IOException e) {
+
+		}
+	}
+}

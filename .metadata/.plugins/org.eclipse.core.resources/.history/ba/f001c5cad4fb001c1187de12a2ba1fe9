@@ -1,0 +1,45 @@
+package exercises.secao17.practice211;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Program {
+
+	public static void main(String[] args) {
+		String path = "/Users/junior/desktop/Arquivos Java/itensVendidos.csv";
+
+//		File pathStr = new File(path);
+//		
+//		File summary = new File(pathStr+"/out");
+		ArrayList<String> lines = new ArrayList<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			String line = br.readLine();
+			while (line != null) {
+				lines.add(line);
+				line = br.readLine();
+			}
+
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+
+		String sourceFolder = "/Users/junior/desktop/Arquivos Java";
+
+		boolean success = new File(sourceFolder + "/out").mkdir();
+
+		String newPath = "/Users/junior/desktop/Arquivos Java/summary.csv";
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(newPath))) {
+			bw.write("teste");
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+
+	}
+}
