@@ -1,0 +1,23 @@
+package exercises.secao18;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		String path = "/Users/junior/Desktop/arquivo-1-a.csv";
+		
+		try(BufferedReader br = new BufferedReader(new FileReader(path))){
+			
+		String line = br.readLine();
+		
+		System.out.println(line);
+			
+		}catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

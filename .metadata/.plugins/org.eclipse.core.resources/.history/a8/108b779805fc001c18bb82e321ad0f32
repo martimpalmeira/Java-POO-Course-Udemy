@@ -1,0 +1,117 @@
+package exercises.secao18;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Consulta {
+	
+	private Date data;
+	
+	private String paciente;
+	
+	private String covenio;
+	
+	private String servico;
+	
+	private String medico;
+	
+	private Integer quantidade;
+	
+	private Double valor;
+	
+	public static ArrayList<Consulta> consultas = new ArrayList<>();
+	
+	public Consulta() {
+		
+	}
+
+	public Consulta(Date data, String paciente, String covenio, String servico, String medico, Integer quantidade,
+			Double valor) {
+		this.data = data;
+		this.paciente = paciente;
+		this.covenio = covenio;
+		this.servico = servico;
+		this.medico = medico;
+		this.quantidade = quantidade;
+		this.valor = valor;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public String getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(String paciente) {
+		this.paciente = paciente;
+	}
+
+	public String getCovenio() {
+		return covenio;
+	}
+
+	public void setCovenio(String covenio) {
+		this.covenio = covenio;
+	}
+
+	public String getServico() {
+		return servico;
+	}
+
+	public void setServico(String servico) {
+		this.servico = servico;
+	}
+
+	public String getMedico() {
+		return medico;
+	}
+
+	public void setMedico(String medico) {
+		this.medico = medico;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+	
+	public void addConsulta(Consulta consulta) {
+		consultas.add(consulta);
+	}
+	
+	public void removeConsulta(Consulta consulta) {
+		consultas.remove(consulta);
+	}
+
+	public static ArrayList<Consulta> getConsultas() {
+		return consultas;
+	}
+
+	@Override
+	public String toString() {
+		return "Consulta [data=" + data + ", paciente=" + paciente + ", covenio=" + covenio + ", servico=" + servico
+				+ ", medico=" + medico + ", quantidade=" + quantidade + ", valor=" + valor + "]";
+	}
+	
+	
+	
+	
+	
+}
