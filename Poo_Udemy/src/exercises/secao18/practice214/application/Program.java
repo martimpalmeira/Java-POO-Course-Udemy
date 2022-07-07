@@ -7,7 +7,10 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-import exercises.secao18.practice214.entities.Location;
+import exercises.secao18.practice214.entities.CarRental;
+import exercises.secao18.practice214.entities.Vehicle;
+import exercises.secao18.practice214.service.BrazilTaxService;
+import exercises.secao18.practice214.service.RentalService;
 
 public class Program {
 
@@ -22,30 +25,30 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 
 		System.out.println("Enter rental data");
-
 		System.out.print("Car model: ");
 		String carModel = sc.nextLine();
-
 		System.out.print("Pickup (dd/MM/yyyy hh:ss): ");
-		Date pickupDate = sdf.parse(sc.nextLine());
-
+		Date start = sdf.parse(sc.nextLine());
 		System.out.print("Return (dd/MM/yyyy hh:ss): ");
-		Date returnDate = sdf.parse(sc.nextLine());
+		Date finish = sdf.parse(sc.nextLine());
+
+		CarRental carRental = new CarRental(start, finish, new Vehicle(carModel));
 
 		System.out.print("Enter price per hour: ");
-		Double valuePerHour = sc.nextDouble();
+		Double pricePerHour = sc.nextDouble();
 		sc.nextLine();
-
 		System.out.print("Enter price per day: ");
-		Double valuePerDay = sc.nextDouble();
+		Double pricePerDay = sc.nextDouble();
 		sc.nextLine();
 
-		Location location = new Location(carModel, pickupDate, returnDate, valuePerHour, valuePerDay);
-		
+		RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
+
+		rentalService.processInvoice(carRental);
+
 		System.out.println("INVOICE: ");
-		System.out.println("Basic payment: " + df.format(location.locationValue()));
-		System.out.println("Tax: " + df.format(location.tax()));
-		System.out.print("Total payment: " + df.format(location.total()));
+		System.out.println("Basic payment: " + df.format(carRental.getInvoice().getBasicPayment()));
+		System.out.println("Tax: " + df.format(carRental.getInvoice().getTax()));
+		System.out.print("Total payment: " + df.format(carRental.getInvoice().getTotalPayment()));
 
 		sc.close();
 	}

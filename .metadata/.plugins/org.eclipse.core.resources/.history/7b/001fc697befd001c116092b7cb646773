@@ -1,0 +1,42 @@
+package exercises.secao18.practice219.model.services;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.ArrayList;
+
+public class InstallmentService {
+	
+	public static void main(String[] args) {
+		
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		TemporalAccessor date = dtf.parse("02/05/2022");
+		LocalDate data  = LocalDate.from(date);
+		data = data.plusMonths(1);
+		System.out.println(dtf.format(data));
+		
+		ArrayList<LocalDate> dates = new ArrayList<>();
+		dates  = installmentsDates(data, 3);
+		for(LocalDate i : dates) {
+			System.out.println(i);
+		}
+	}
+	
+	
+	
+	public static ArrayList<LocalDate> installmentsDates(LocalDate initial, Integer numberOfIntsallments){ 
+		
+		ArrayList<LocalDate> dates = new ArrayList<>();
+		
+		
+		for(int i =0; i<numberOfIntsallments; i++) {
+			LocalDate newDate = initial.plusMonths(1);
+			dates.add(newDate);
+		}
+		
+		return null;
+	}
+	
+	
+}

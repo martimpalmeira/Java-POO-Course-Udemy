@@ -1,0 +1,5 @@
+package exercises.secao18.practice219.model.services;
+
+public class InstallmentService {
+
+}

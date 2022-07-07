@@ -1,0 +1,24 @@
+package exercises.secao18.practice219.model.services;
+
+import java.util.ArrayList;
+
+public class PaypalPaymentService implements PaymentService {
+	
+	private static final double MONTH_INTEREST = 1/100;
+	
+	private static final double PAYMENT_FEE = 2/100;
+	
+	@Override
+	public ArrayList<Double> calculateQuota(Double totalValue, Integer numberOfinstallments) {
+		ArrayList<Double> installments = new ArrayList<>();
+		Double basicInstallment =  totalValue/numberOfinstallments;
+		for(int i =1; i<=numberOfinstallments; i++ ) {
+			Double simpleInstallment = basicInstallment + (basicInstallment * MONTH_INTEREST * i);
+			Double finalInstallment = simpleInstallment * (1 + PAYMENT_FEE);
+			installments.add(finalInstallment);
+		}
+		return installments;
+	}
+	
+	
+}
