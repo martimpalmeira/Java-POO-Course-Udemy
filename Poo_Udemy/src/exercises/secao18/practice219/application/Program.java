@@ -1,20 +1,19 @@
 package exercises.secao18.practice219.application;
 
 import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
 import exercises.secao18.practice219.model.entities.Contract;
-import exercises.secao18.practice219.model.services.InstallmentService;
+import exercises.secao18.practice219.model.entities.Installment;
+import exercises.secao18.practice219.model.services.ContractService;
 import exercises.secao18.practice219.model.services.PaypalPaymentService;
 
 public class Program {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args){
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
@@ -36,15 +35,12 @@ public class Program {
 
 		Contract c = new Contract(number, date, value);
 
-		PaypalPaymentService p = new PaypalPaymentService();
-		InstallmentService iServ = new InstallmentService();
-
-		ArrayList<Double> quotas = p.getQuotas(c.getTotalValue(), numberOfIntallments);
-		ArrayList<LocalDate> dates = iServ.getInstallmentsDates(c.getDate(), numberOfIntallments);
+		ContractService iServ = new ContractService(new PaypalPaymentService());
+		iServ.processContract(c, numberOfIntallments);
 
 		System.out.println("Installments: ");
-		for (int i = 0; i < numberOfIntallments; i++) {
-			System.out.println(dtf.format(dates.get(i)) + " - " + df.format(quotas.get(i)));
+		for (Installment inst : c.getInstallment()) {
+			System.out.println(dtf.format(inst.getDueDate()) + " - " + df.format(inst.getAmount()));
 		}
 
 		sc.close();

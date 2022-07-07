@@ -1,0 +1,33 @@
+package exercises.secao18.practice223.application;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Program {
+	
+	public static void main(String[] args) {
+		
+		String path = "/Users/junior/Desktop/Arquivos Java/teste.txt";
+		
+		ArrayList<String> lines = new ArrayList<>();
+		
+		try(BufferedReader br = new BufferedReader(new FileReader(path))){
+			String line = br.readLine();
+			//System.out.println(line);
+			while(br.readLine()!= null) {
+				lines.add(line);
+				
+			}
+			
+		}catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		for(String l : lines) {
+			System.out.println(l);
+		}
+			
+	}
+}

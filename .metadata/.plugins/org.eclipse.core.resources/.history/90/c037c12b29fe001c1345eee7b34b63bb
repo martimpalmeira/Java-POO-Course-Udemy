@@ -1,0 +1,25 @@
+package exercises.secao18.practice219.model.services;
+
+public class PaypalPaymentService implements OnlinePaymentService  {
+	
+	private static final Double MONTH_INTEREST = 0.01;
+	
+	private static final Double PAYMENT_FEE = 0.02;
+	
+	public PaypalPaymentService() {
+	}
+	
+	@Override
+	public Double getMonthInterest() {
+		return MONTH_INTEREST;
+	}
+	
+	@Override
+	public Double getPaymentFee() {
+		return PAYMENT_FEE;
+	}	
+
+
+	
+	
+}

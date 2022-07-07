@@ -8,3 +8,6 @@
 1657079676415	Delete element
 1657087930857	Rename type 'InstallmentServices'
 1657088306658	Rename type 'PayPalPaymentService'
+1657211629756	Rename type 'InstallmentService'
+1657211805116	Rename type 'PaymentService'
+1657234779902	Rename package 'exercises.secao18.practice223.model.application'

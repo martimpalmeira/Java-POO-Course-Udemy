@@ -1,29 +1,25 @@
 package exercises.secao18.practice219.model.services;
 
-import java.util.ArrayList;
-
-public class PaypalPaymentService  {
+public class PaypalPaymentService implements OnlinePaymentService  {
 	
-	private static final double MONTH_INTEREST = 0.01;
+	private static final Double MONTH_INTEREST = 0.01;
 	
-	private static final double PAYMENT_FEE = 0.02;
+	private static final Double PAYMENT_FEE = 0.02;
 	
 	public PaypalPaymentService() {
-		
 	}
 	
-	public double getMONTH_INTEREST() {
-		return MONTH_INTEREST;
+	@Override
+	public Double monthInterest(Double amount, Integer month) {
+		return amount * MONTH_INTEREST * month;
 	}
-
-	public double getPAYMENT_FEE() {
-		return PAYMENT_FEE;
+	
+	@Override
+	public Double paymentFee(Double amount) {
+		return amount * PAYMENT_FEE;
 	}	
 
-	public ArrayList<Double> getQuotas(Double totalValue, Integer numberOfinstallments) {
-		InstallmentService i = new InstallmentService();
-		 return i.getQuotas(totalValue, numberOfinstallments, MONTH_INTEREST, PAYMENT_FEE);
-	}
+
 	
 	
 }
