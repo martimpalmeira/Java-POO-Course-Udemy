@@ -9,10 +9,11 @@
     <fullyQualifiedTypeName name="java.text.ParseException"/>
     <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
     <fullyQualifiedTypeName name="exercises.secao18.practice214.entities.Location"/>
-    <fullyQualifiedTypeName name="java.util.Locale"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
 </qualifiedTypeNameHistroy>
