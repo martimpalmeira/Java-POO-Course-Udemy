@@ -2,15 +2,15 @@ package exercises.secao19.practice227.model.service;
 
 import java.util.ArrayList;
 
-public class PrintService<T> {
+public class PrintService {
 
-	private ArrayList<T> numbers = new ArrayList<>();
+	private static ArrayList<Object> numbers = new ArrayList<>();
 
-	public void addValue(T value) {
+	public void addValue(Object value) {
 		numbers.add(value);
 	}
 
-	public T first() throws RuntimeException {
+	public Object first() throws RuntimeException {
 		if (numbers.isEmpty()) {
 			throw new RuntimeException("List is empty");
 		}

@@ -1,0 +1,8 @@
+package exercises.secao19.practice228.application;
+
+public class Program {
+	
+	public static void main(String[] t) {
+		System.out.println("r");
+	}
+}

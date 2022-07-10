@@ -1,0 +1,41 @@
+package exercises.secao19.practice228.application;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import exercises.secao19.practice228.model.entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		String path = "/Users/junior/Desktop/products.csv";
+		ArrayList<Product> products = new ArrayList<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+
+			String line = br.readLine();
+			
+			
+
+			while (line != null) {
+				
+				String[] lineSplit = line.split(";");
+				
+				products.add(new Product(lineSplit[0], Double.parseDouble(lineSplit[1])));
+				
+				line = br.readLine();
+				
+			}
+			
+			for(Product p : products) {
+				System.out.println(p);
+			}
+
+		} catch (IOException e) {
+			System.out.println(e.getStackTrace());
+		}
+	}
+}
