@@ -1,0 +1,19 @@
+package exercises.secao19.practice229.application;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Program {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> listaStr = Arrays.asList(4,4 ,3);
+		
+	}
+	
+	public static void printList(ArrayList<?> list) {
+		for(Object i : list) {
+			System.out.println(i);
+		}
+	}
+
+}

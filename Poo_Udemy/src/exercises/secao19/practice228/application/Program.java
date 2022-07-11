@@ -33,14 +33,9 @@ public class Program {
 				
 			}
 			
-//			for(Product p : products) {
-//				System.out.println(p);
-//			}
-			
-			CalculationService cs = new CalculationService();
 			
 			System.out.println("Most expensive:");
-			System.out.println(cs.max(products));
+			System.out.println(CalculationService.max(products));
 
 		} catch (IOException e) {
 			System.out.println(e.getStackTrace());

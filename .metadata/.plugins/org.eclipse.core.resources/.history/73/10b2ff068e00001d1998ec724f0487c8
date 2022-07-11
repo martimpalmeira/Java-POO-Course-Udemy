@@ -1,0 +1,13 @@
+package exercises.secao19.practice231.application;
+
+public class Program {
+
+	public static void main(String[] args) {
+		String a = "1234567890";
+		String b = "1234567890";
+		
+		if(a==b) {
+			System.out.println(true);
+		}
+	}
+}

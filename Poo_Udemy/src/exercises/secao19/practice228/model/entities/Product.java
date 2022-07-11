@@ -2,7 +2,7 @@ package exercises.secao19.practice228.model.entities;
 
 import java.text.DecimalFormat;
 
-public class Product {
+public class Product implements Comparable<Product> {
 
 	private String name;
 
@@ -38,6 +38,11 @@ public class Product {
 	@Override
 	public String toString() {
 		return name + ", " + df.format(value);
+	}
+
+	@Override
+	public int compareTo(Product other) {
+		return this.value.compareTo(other.getValue());
 	}
 
 }

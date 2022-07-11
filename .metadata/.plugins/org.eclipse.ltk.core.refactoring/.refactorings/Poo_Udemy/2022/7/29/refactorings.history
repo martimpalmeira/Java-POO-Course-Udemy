@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;exercises.secao19.practice230.model.entities.Rectangule&apos; to &apos;Rectangle&apos;&#x0A;- Original project: &apos;Poo_Udemy&apos;&#x0A;- Original element: &apos;exercises.secao19.practice230.model.entities.Rectangule&apos;&#x0A;- Renamed element: &apos;exercises.secao19.practice230.model.entities.Rectangle&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Rectangule&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;exercises.secao19.practice230.model.entities{Rectangule.java[Rectangule" matchStrategy="1" name="Rectangle" qualified="false" references="true" similarDeclarations="false" stamp="1657429396502" textual="false" version="1.0"/>
+</session>
