@@ -1,0 +1,50 @@
+package exercises.secao19.practice235.application;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.HashSet;
+import java.util.Set;
+
+import exercises.secao19.practice235.model.entities.Access;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		String path = "/Users/junior/Desktop/access.txt";
+
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+		Set<Access> list = new HashSet<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			String line = br.readLine();
+
+			while (line != null) {
+
+				String[] lineSplit = line.split(" ");
+				TemporalAccessor parse = dtf.parse(lineSplit[1]);
+				Access a = new Access(lineSplit[0], LocalDate.from(parse));
+				list.add(a);
+				line = br.readLine();
+
+			}
+
+			printSet(list);
+
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static void printSet(Set<?>list) {
+		for(Object obj: list) {
+			System.out.println(obj);
+		}
+	}
+
+}

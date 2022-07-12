@@ -1,0 +1,56 @@
+package exercises.secao19.practice238.model.entities;
+
+import java.util.Objects;
+
+public class VoteRegistration {
+
+	private String name;
+	
+	private Integer numberOfVotes;
+	
+	public VoteRegistration() {
+		
+	}
+	
+	public VoteRegistration(String name, Integer numberOfVotes) {
+		this.name = name;
+		this.numberOfVotes = numberOfVotes;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getNumberOfVotes() {
+		return numberOfVotes;
+	}
+
+	public void setNumberOfVotes(Integer numberOfVotes) {
+		this.numberOfVotes = numberOfVotes;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		VoteRegistration other = (VoteRegistration) obj;
+		return Objects.equals(name, other.name);
+	}
+	
+	
+	
+	
+}

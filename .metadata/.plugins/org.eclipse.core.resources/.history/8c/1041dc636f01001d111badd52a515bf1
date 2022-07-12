@@ -1,0 +1,5 @@
+package exercises.secao19.practice238.model.entities;
+
+public class VoteRegistration {
+
+}

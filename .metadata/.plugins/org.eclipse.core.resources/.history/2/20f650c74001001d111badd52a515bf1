@@ -1,0 +1,45 @@
+package exercises.secao19.practice236.model.entities;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Course {
+	
+	private String name;
+
+	private Set<Student> users = new HashSet<>();
+	
+	public Course() {
+		
+	}
+	
+	public Course(String name) {
+		this.name = name;
+	}
+
+	public void addUser(Student user) {
+		if (user != null) {
+			users.add(user);
+		}
+	}
+	
+	public void removeUser(Student user) {
+		if (users.contains(user)) {
+			users.remove(user);
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<Student> getUsers() {
+		return users;
+	}
+	
+	
+}
