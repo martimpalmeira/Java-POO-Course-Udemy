@@ -17,6 +17,7 @@ public class Program {
 		Map<String, Integer> voteRegisters = new LinkedHashMap<>();
 
 		System.out.print("Enter file full path: ");
+
 		// /Users/junior/Desktop/Arquivos Java/votesregistration.csv
 		String path = sc.nextLine();
 
@@ -32,12 +33,12 @@ public class Program {
 
 				if (voteRegisters.containsKey(name)) {
 					numberOfVotes += voteRegisters.get(name);
-					voteRegisters.put(name, numberOfVotes);		
+					voteRegisters.put(name, numberOfVotes);
+					line = br.readLine();
 				} else {
-					voteRegisters.put(name, numberOfVotes);	
+					voteRegisters.put(name, numberOfVotes);
+					line = br.readLine();
 				}
-				
-				line = br.readLine();
 
 			}
 
