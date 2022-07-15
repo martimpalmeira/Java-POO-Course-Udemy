@@ -1,0 +1,17 @@
+package exercises.secao20.practice250;
+
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter full file path: ");
+		String path = sc.nextLine();
+
+		sc.close();
+	}
+
+}

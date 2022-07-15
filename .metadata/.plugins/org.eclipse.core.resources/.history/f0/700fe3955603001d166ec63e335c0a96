@@ -1,0 +1,15 @@
+package exercises.secao20.practice241.application;
+
+import java.util.Comparator;
+
+import exercises.secao20.practice241.model.entities.Product;
+
+public class MyComparator implements Comparator{
+
+	@Override
+	public int compare(Product p1, Product p2) {
+		
+		return 0;
+	}
+	
+}

@@ -1,0 +1,18 @@
+package exercises.secao20.practice247.model.service;
+
+import java.util.List;
+
+import exercises.secao20.practice247.model.entities.Product;
+
+public class SumProductsT {
+
+	public static Double filteredSum(List<Product> list) {
+		Double sum = 0.00;
+		for (Product p : list) {
+			if (p.getName().toUpperCase().charAt(0) == 'T') {
+				sum += p.getPrice();
+			}
+		}return sum;
+	}
+
+}

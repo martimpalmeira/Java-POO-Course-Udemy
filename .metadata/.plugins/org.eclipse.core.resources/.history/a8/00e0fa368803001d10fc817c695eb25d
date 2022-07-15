@@ -1,0 +1,15 @@
+package exercises.secao20.practice246.util;
+
+import java.util.function.Function;
+
+import exercises.secao20.practice246.model.entities.Product;
+
+public class UpperCaseName implements Function<Product, Product>{
+
+	@Override
+	public Product apply(Product p) {
+		return new Product(p.getName().toUpperCase(), p.getPrice());
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package exercises.secao20.practice251.model.entities;
+
+public class Employee {
+
+}

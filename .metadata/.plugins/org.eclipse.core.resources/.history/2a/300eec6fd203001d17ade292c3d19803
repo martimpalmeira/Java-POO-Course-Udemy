@@ -1,0 +1,5 @@
+package exercises.secao20.practice250.model.entities;
+
+public class Product {
+
+}

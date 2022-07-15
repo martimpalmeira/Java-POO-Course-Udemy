@@ -6,10 +6,10 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.hashcode.equals"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
 			<item value="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.generate.hashcode.equals"/>
 			<item value="org.eclipse.jdt.ui.edit.text.java.add.unimplemented.constructors"/>
 		</list>
 		<list key="orderedProviders">
@@ -27,10 +27,10 @@
 			<item value="1"/>
 		</list>
 		<list key="textArray">
-			<item value="generate has"/>
-			<item value="generat get"/>
-			<item value="generate con"/>
 			<item value="generate tos"/>
+			<item value="generate con"/>
+			<item value="generat get"/>
+			<item value="generate has"/>
 			<item value="generate"/>
 		</list>
 	</section>

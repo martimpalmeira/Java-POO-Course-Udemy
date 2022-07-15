@@ -1,0 +1,17 @@
+package exercises.secao20.practice244.application;
+
+import java.util.function.Predicate;
+
+import exercises.secao20.practice244.model.entities.Product;
+
+public class MyPredicate implements Predicate<Product> {
+
+	@Override
+	public boolean test(Product p) {
+		if(p.getPrice()>=100.00) {
+			return true;
+		}
+		return false;
+	}
+
+}

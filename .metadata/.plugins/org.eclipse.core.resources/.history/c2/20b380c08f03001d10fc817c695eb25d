@@ -1,0 +1,20 @@
+package exercises.secao20.practice247.util;
+
+import java.util.function.Function;
+
+import exercises.secao20.practice247.model.entities.Product;
+
+public class SumProductsT implements Function<Product, Double> {
+
+	@Override
+	public Double apply(Product p) {
+		if(p.getName().toUpperCase().charAt(0) == 'T') {
+			return p.getPrice();
+		}else {
+			return null;
+		}
+	}
+	
+	
+	
+}
