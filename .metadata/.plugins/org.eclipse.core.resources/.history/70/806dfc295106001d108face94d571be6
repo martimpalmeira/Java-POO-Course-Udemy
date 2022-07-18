@@ -1,0 +1,13 @@
+package exercises.secao21.practice257.application;
+
+import exercises.secao21.practice257.db.DB;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		DB.getConnection();
+		DB.CloseConnection();
+	}
+
+}

@@ -52,7 +52,7 @@ public class Program {
 			emails.forEach(System.out::println);
 
 			Double sum = employees.stream().filter(p -> p.getName().toUpperCase().charAt(0) == 'M')
-					.map(e -> e.getSalary()).reduce(0.0, (p, q) -> p + q);
+					.map(e -> e.getSalary()).reduce(0.0, (x, y) -> x + y);
 
 			System.out.println("Sum of salary of people whose name starts with 'M': " + df.format(sum));
 
