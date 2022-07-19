@@ -1,0 +1,34 @@
+package exercises.secao21.practice260.application;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+
+import exercises.secao21.practice259.db.DB;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			con = DB.getConnection();
+			ps = con.prepareStatement(
+					"INSERT INTO seller(Name, Email, BirthDate, BaseSalary, DepartmentId) VALUES(?,?,?,?,?)");
+			ps.setString(1, "Carl Purple");
+			ps.setString(2, "carl@gmail.com");
+			
+			ps.setDate(3, new java.sql.Date(sdf.parse("05/01/1999")));
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

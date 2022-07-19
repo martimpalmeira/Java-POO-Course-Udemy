@@ -1,0 +1,5 @@
+package exercises.secao21.practice260.db;
+
+public class DbException {
+
+}

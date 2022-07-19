@@ -1,0 +1,38 @@
+package exercises.secao21.practice260.application;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import exercises.secao21.practice259.db.DB;
+import exercises.secao21.practice260.db.DbException;
+
+public class Insert {
+
+	public static void main(String[] args) {
+
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			con = DB.getConnection();
+
+			List<String> names = new ArrayList<>(Arrays.asList("Eletronics", "Fashion", "Books"));
+
+			for (int i = 1; i <= names.size(); i++) {
+				ps = con.prepareStatement("UPDATE department SET Name =?  WHERE Id =?");
+				ps.setString(1, names.get(i-1));
+				ps.setInt(i, i);
+			}
+
+			int rowsAffected = ps.executeUpdate();
+			System.out.println("Done! Rows affected: " + rowsAffected);
+		} catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+	}
+
+}

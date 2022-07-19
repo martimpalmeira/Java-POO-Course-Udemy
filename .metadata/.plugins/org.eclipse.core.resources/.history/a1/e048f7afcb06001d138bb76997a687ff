@@ -1,0 +1,28 @@
+package exercises.secao21.practice260.application;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import exercises.secao21.practice259.db.DB;
+import exercises.secao21.practice260.db.DbException;
+
+public class Insert {
+
+	public static void main(String[] args) {
+
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			con = DB.getConnection();
+			ps = con.prepareStatement("UPDATE department SET Name =?  WHERE Id =?");
+			ps.setString(0, "Eletronics");
+			int rowsAffected = ps.executeUpdate();
+			System.out.println("Done! Rows affected: " + rowsAffected);
+		} catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+	}
+
+}
